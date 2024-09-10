@@ -1,3 +1,5 @@
 [submodule "gtsam/gtsam"]
 	path = gtsam/gtsam
 	url = https://github.com/borglab/gtsam
+	branch = develop
+        shallow = true
