@@ -1,0 +1,26 @@
+name: Test
+
+on:
+  push:
+  workflow_dispatch:
+
+
+jobs:
+
+  rust-stable-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
+      # - name: Linting
+        # run: cargo clippy --all-targets --features ros-native -- -D warnings
+      - name: Dependencies
+        run: |
+          sudo apt-get install -y cmake build-essential pkg-config libpython3-dev python3-numpy libicu-dev ninja-build libeigen3-dev libtbb-dev clang libboost-all-dev
+      - name: Test
+        run: cargo test --verbose
+
