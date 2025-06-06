@@ -16,6 +16,7 @@ else()
     message(STATUS "GTSAM package not found. Building from source.")
 
     # override with cache and force
+    set(CMAKE_BUILD_TYPE "Release")
     set(GTSAM_USE_SYSTEM_EIGEN TRUE CACHE BOOL "Use Eigen3 from system")
     set(GTSAM_ENABLE_BOOST_SERIALIZATION ON CACHE BOOL "Enable Boost Serialization")
     set(GTSAM_USE_BOOST_FEATURES OFF CACHE BOOL "Use Boost features")
