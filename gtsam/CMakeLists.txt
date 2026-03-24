@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.29)
-project(gtsam_imu)
+project(gtsam_sys)
 
-find_package(gtsam 4.2 QUIET)
+find_package(gtsam 4.3 QUIET)
 
 set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
 
@@ -18,7 +18,7 @@ else()
     # override with cache and force
     set(CMAKE_BUILD_TYPE "Release")
     set(GTSAM_USE_SYSTEM_EIGEN TRUE CACHE BOOL "Use Eigen3 from system")
-    set(GTSAM_ENABLE_BOOST_SERIALIZATION ON CACHE BOOL "Enable Boost Serialization")
+    set(GTSAM_ENABLE_BOOST_SERIALIZATION OFF CACHE BOOL "Enable Boost Serialization")
     set(GTSAM_USE_BOOST_FEATURES OFF CACHE BOOL "Use Boost features")
     set(GTSAM_BUILD_UNSTABLE OFF CACHE BOOL "Build unstable features")
     set(GTSAM_UNSTABLE_BUILD_PYTHON OFF CACHE BOOL "Build python bindings for unstable features")
@@ -31,16 +31,16 @@ else()
     set(GTSAM_BUILD_PYTHON OFF CACHE BOOL "Build Python bindings")
     set(GTSAM_INSTALL_MATLAB_TOOLBOX OFF CACHE BOOL "Build MATLAB bindings")
     set(GTSAM_TANGENT_PREINTEGRATION OFF CACHE BOOL "Use tangent preintegration")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+    # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
 
     add_subdirectory(gtsam)
 
     set(CMAKE_CXX_STANDARD 17)
 
-    add_library(gtsam_imu gtsam_imu.cpp)
-    add_dependencies(gtsam_imu gtsam)
-    target_link_libraries(gtsam_imu gtsam)
-    target_include_directories(gtsam_imu PUBLIC ${GTSAM_INCLUDE_DIRS})
+    add_library(gtsam_sys gtsam_imu.cpp)
+    add_dependencies(gtsam_sys gtsam)
+    target_link_libraries(gtsam_sys gtsam)
+    target_include_directories(gtsam_sys PUBLIC ${GTSAM_INCLUDE_DIRS})
 endif()
 
 

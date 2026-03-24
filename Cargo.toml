@@ -1,6 +1,6 @@
 [package]
 name = "gtsam-sys"
-version = "0.1.0+4.2"
+version = "0.1.0+pre4.3"
 edition = "2021"
 
 [dependencies]

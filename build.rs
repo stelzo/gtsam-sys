@@ -53,7 +53,7 @@ fn main() {
         "cargo:rustc-link-search=native={}/build",
         out_path.display()
     );
-    println!("cargo:rustc-link-lib=static=gtsam_imu");
+    println!("cargo:rustc-link-lib=static=gtsam_sys");
     println!("cargo:rustc-link-lib=gtsam");
     println!("cargo:rustc-link-lib=stdc++");
 }
