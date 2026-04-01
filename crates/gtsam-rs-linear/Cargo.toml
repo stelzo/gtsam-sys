@@ -1,0 +1,9 @@
+[package]
+name = "gtsam-rs-linear"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gtsam-rs-inference = { path = "../gtsam-rs-inference" }
+nalgebra = { workspace = true }
+faer = { workspace = true }

@@ -8,10 +8,10 @@ set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
 
 if(gtsam_FOUND)
     message(STATUS "Found GTSAM version ${gtsam_VERSION}")
-    add_library(gtsam_imu gtsam_imu.cpp)
-    add_dependencies(gtsam_imu gtsam)
-    target_link_libraries(gtsam_imu gtsam)
-    target_include_directories(gtsam_imu PUBLIC ${gtsam_INCLUDE_DIRS})
+    add_library(gtsam_sys gtsam_imu.cpp)
+    add_dependencies(gtsam_sys gtsam)
+    target_link_libraries(gtsam_sys gtsam)
+    target_include_directories(gtsam_sys PUBLIC ${gtsam_INCLUDE_DIRS})
 else()
     message(STATUS "GTSAM package not found. Building from source.")
 
@@ -42,5 +42,4 @@ else()
     target_link_libraries(gtsam_sys gtsam)
     target_include_directories(gtsam_sys PUBLIC ${GTSAM_INCLUDE_DIRS})
 endif()
-
 

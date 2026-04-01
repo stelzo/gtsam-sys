@@ -1,3 +1,7 @@
+#[deprecated(
+    since = "0.1.0",
+    note = "gtsam-sys is bridge-only during migration; prefer gtsam-rs::navigation::ImuParameters"
+)]
 #[derive(Debug, Clone)]
 pub struct ImuParameters {
     pub gravity: f64,
@@ -10,6 +14,7 @@ pub struct ImuParameters {
     pub bias_gyro: nalgebra::Vector3<f64>,
 }
 
+#[allow(deprecated)]
 impl Default for ImuParameters {
     fn default() -> Self {
         Self {

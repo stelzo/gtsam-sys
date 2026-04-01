@@ -1,0 +1,10 @@
+[package]
+name = "gtsam-rs-compat"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gtsam-rs-inference = { path = "../gtsam-rs-inference" }
+gtsam-rs-navigation = { path = "../gtsam-rs-navigation" }
+gtsam-rs-nonlinear = { path = "../gtsam-rs-nonlinear" }
+gtsam-rs-slam = { path = "../gtsam-rs-slam" }

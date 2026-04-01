@@ -3,8 +3,36 @@ name = "gtsam-sys"
 version = "0.1.0+pre4.3"
 edition = "2021"
 
-[dependencies]
+[workspace]
+resolver = "2"
+members = [
+    ".",
+    "crates/gtsam-rs",
+    "crates/gtsam-rs-math",
+    "crates/gtsam-rs-linear",
+    "crates/gtsam-rs-inference",
+    "crates/gtsam-rs-nonlinear",
+    "crates/gtsam-rs-navigation",
+    "crates/gtsam-rs-slam",
+    "crates/gtsam-rs-discrete",
+    "crates/gtsam-rs-compat",
+]
+
+[workspace.dependencies]
 nalgebra = "0.33"
+faer = "0.23.2"
+
+[features]
+default = ["pure-rust-navigation"]
+pure-rust-navigation = ["dep:gtsam-rs-navigation"]
+oracle-cpp = []
+
+[dependencies]
+nalgebra = { workspace = true }
+gtsam-rs-navigation = { path = "crates/gtsam-rs-navigation", optional = true }
+
+[dev-dependencies]
+gtsam-rs-navigation = { path = "crates/gtsam-rs-navigation" }
 
 [build-dependencies]
 bindgen = "0.69"

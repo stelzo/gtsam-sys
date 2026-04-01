@@ -1,0 +1,8 @@
+[package]
+name = "gtsam-rs-navigation"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gtsam-rs-math = { path = "../gtsam-rs-math" }
+nalgebra = { workspace = true }

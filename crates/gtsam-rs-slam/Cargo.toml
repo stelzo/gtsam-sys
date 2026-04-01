@@ -1,0 +1,10 @@
+[package]
+name = "gtsam-rs-slam"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gtsam-rs-inference = { path = "../gtsam-rs-inference" }
+gtsam-rs-linear = { path = "../gtsam-rs-linear" }
+gtsam-rs-math = { path = "../gtsam-rs-math" }
+nalgebra = { workspace = true }

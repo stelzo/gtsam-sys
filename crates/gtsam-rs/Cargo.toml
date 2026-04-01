@@ -1,0 +1,15 @@
+[package]
+name = "gtsam-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gtsam-rs-compat = { path = "../gtsam-rs-compat" }
+gtsam-rs-discrete = { path = "../gtsam-rs-discrete" }
+gtsam-rs-inference = { path = "../gtsam-rs-inference" }
+gtsam-rs-linear = { path = "../gtsam-rs-linear" }
+gtsam-rs-math = { path = "../gtsam-rs-math" }
+gtsam-rs-navigation = { path = "../gtsam-rs-navigation" }
+gtsam-rs-nonlinear = { path = "../gtsam-rs-nonlinear" }
+gtsam-rs-slam = { path = "../gtsam-rs-slam" }
+nalgebra = { workspace = true }
